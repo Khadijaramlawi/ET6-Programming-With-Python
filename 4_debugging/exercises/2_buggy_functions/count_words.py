@@ -29,4 +29,6 @@ def count_words(text: str) -> int:
     """
     assert isinstance(text, str), "input must be a string"
 
-    return len(text.split(" "))
+# I solved the bug by ommitting the "" insdie the text.split function below. 
+# The old code doesn't handle multiple spaces well and counts them as separate empty strings, while the new code automatically filters out empty strings and only counts actual words.
+    return len(text.split())
