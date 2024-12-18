@@ -39,11 +39,10 @@ def find_longest(items: list) -> str:
         raise ValueError("list cannot be empty")
     
     # This is a validation to ensure all elements are strings:
-    if not all(isinstance(item, str) for item in items):
-        raise ValueError("All elements in the list must be strings")
     
     longest = items[0]
     for item in items:
+        assert isinstance(item, str)
         if len(item) > len(longest):
             longest = item
     return longest
